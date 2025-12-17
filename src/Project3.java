@@ -5,8 +5,10 @@ import java.time.LocalTime;
 
 public class Project3 {
 
+    static String murderer = "Mr. Green";
+    static JTextArea output;
+    static ArrayList<String> collectedClues = new ArrayList<>();
 
-    ///  ADD METHODS HEREIUQWJKAFDNSIAWBJRKSGFND,IPERABSFJKDN
     public static void main(String[] args) {
         JFrame frame =  new JFrame("Murder Mysery!");
         frame.setSize(700,900);
@@ -73,5 +75,29 @@ public class Project3 {
                 suspects[0]
 
                 //End of citaiton
+        );
+
+        if (suspect != null) {
+            switch (suspect) {
+                case "Mr. Green":
+                    output.append("Mr. Green says he was in the kitchen at 11 pm\n");
+                    break;
+                case "Ms. Scarlett":
+                    output.append("Ms. Scalett says Mr. Green was NOT in the kitchen\n");
+                    break;
+                case "Prof. Plum":
+                    output.append("Prof. Plum says he say Ms. Scarlett in the library\n");
+                    break;
+
+        }
+
+        String clue = clues(suspect);
+            if (!collectedClues.contains(clue)) {
+                collectedClues.add(clue);
+                output.append("Clue obtained: " + clue + "\n");
+
+            }
+
+        }
     }
 }
