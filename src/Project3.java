@@ -9,7 +9,7 @@ public class Project3 {
     ///  ADD METHODS HEREIUQWJKAFDNSIAWBJRKSGFND,IPERABSFJKDN
     public static void main(String[] args) {
         JFrame frame =  new JFrame("Murder Mysery!");
-        frame.setSize(700,600);
+        frame.setSize(700,900);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JTextArea output = new JTextArea();
@@ -25,11 +25,23 @@ public class Project3 {
         output.append("You have ONE chance only to find the killer...");
 
         JButton interrogate = new JButton("1. Interrogate suspects");
-        JButton clues = new JButton("2. View clues");
+        JButton clue = new JButton("2. View clues");
         JButton accusation = new JButton("3. Make accusation");
+
+        JPanel buttons = new JPanel();
+        buttons.add(interrogate);
+        buttons.add(clue);
+        buttons.add(accusation);
 
 
         frame.add(output);
+        frame.add(buttons, "South");
         frame.setVisible(true);
+
+        interrogate.addActionListener(click -> interrogates());
+        clue.addActionListener(click -> clues());
+        accusation.addActionListener(click -> accusations());
+
+        
     }
 }
