@@ -41,7 +41,37 @@ public class Project3 {
         interrogate.addActionListener(click -> interrogates());
         clue.addActionListener(click -> clues());
         accusation.addActionListener(click -> accusations());
+    }
 
-        
+    public static String RandomHint() {
+        String[] hints = {"Green glove", "red ring", "purple pen"};
+        return "Clue obtained: " + hints[(int)(Math.random() * hints.length)];
+    }
+
+    public static String clues(String suspect) {
+        switch (suspect) {
+            case "Mr. Green": return "Green glove";
+            case "Ms. Scarlett": return "Red ring";
+            case "Prof. Plum": return "purple pen";
+
+        }
+    }
+
+    public static String interrogates() {
+        String[] suspects = {"Mr. Green", "Ms. Scarlett", "Prof. Plum"};
+
+        //Modifiied from: ChatGPT
+        //Prompt: "How do I code the parameters for JOptionPane.showInputDialog?
+        //Date accessed: 17 Dec
+        String suspect = (String) JOptionPane.showInputDialog(
+                null,
+                "Who do you want to interrogate?",
+                "Interrogate Suspect",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                suspects,
+                suspects[0]
+
+                //End of citaiton
     }
 }
