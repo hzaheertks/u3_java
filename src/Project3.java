@@ -12,7 +12,24 @@ public class Project3 {
         frame.setSize(700,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        output = new JTextArea();
-        
+        JTextArea output = new JTextArea();
+
+        //  intro:
+        LocalTime now = LocalTime.now();
+        output.append("CASE FILE #2211\n");
+        output.append("From detective Sergeant Tellez\n");
+        output.append("To detective... YOU!\n");
+        output.append("A body was found at 11.42 pm\n");
+        output.append("Current time: " + now + "\n");
+        output.append("Everyone had a reason\n");
+        output.append("You have ONE chance only to find the killer...");
+
+        JButton interrogate = new JButton("1. Interrogate suspects");
+        JButton clues = new JButton("2. View clues");
+        JButton accusation = new JButton("3. Make accusation");
+
+
+        frame.add(output);
+        frame.setVisible(true);
     }
 }
