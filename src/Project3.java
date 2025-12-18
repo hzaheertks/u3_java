@@ -14,7 +14,7 @@ public class Project3 {
         frame.setSize(700,900);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JTextArea output = new JTextArea();
+         output = new JTextArea();
 
         //  intro:
         LocalTime now = LocalTime.now();
@@ -50,16 +50,17 @@ public class Project3 {
         return "Clue obtained: " + hints[(int)(Math.random() * hints.length)];
     }
 
-    public static String clues(String suspect) {
+    public static String cluesForSuspect(String suspect) {
         switch (suspect) {
             case "Mr. Green": return "Green glove";
             case "Ms. Scarlett": return "Red ring";
             case "Prof. Plum": return "purple pen";
+            default: return "No clue";
 
         }
     }
 
-    public static String interrogates() {
+    public static void interrogates() {
         String[] suspects = {"Mr. Green", "Ms. Scarlett", "Prof. Plum"};
 
         //Modifiied from: ChatGPT
@@ -80,7 +81,7 @@ public class Project3 {
         if (suspect != null) {
             switch (suspect) {
                 case "Mr. Green":
-                    output.append("Mr. Green says he was in the kitchen at 11 pm\n");
+                    output.append("\nMr. Green says he was in the kitchen at 11 pm\n");
                     break;
                 case "Ms. Scarlett":
                     output.append("Ms. Scarlett says Mr. Green was NOT in the kitchen\n");
@@ -91,7 +92,7 @@ public class Project3 {
 
         }
 
-        String clue = clues(suspect);
+        String clue = cluesForSuspect(suspect);
             if (!collectedClues.contains(clue)) {
                 collectedClues.add(clue);
                 output.append("Clue obtained: " + clue + "\n");
@@ -116,6 +117,33 @@ public class Project3 {
     }
 
     public static void accusations() {
-        
+        String[] suspects = {"Mr. Green", "Ms. Scarlett", "Prof. Plum"};
+
+        //Modifiied from: ChatGPT
+        //Prompt: "How do I code the parameters for JOptionPane.showInputDialog to ask user for who they want to accuse?
+        //Date accessed: 18 Dec
+        String accused = (String) JOptionPane.showInputDialog(
+                null,
+                "Who do you accuse?",
+                "Make Accusation",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                suspects,
+                suspects[0]
+
+                //End of citation
+
+        );
+
+        if (accused != null) {
+            if (accused.equalsIgnoreCase(murderer)) {
+                JOptionPane.showMessageDialog(null, "Congratulations, you caught the murderer!");
+            }
+
+            else {
+                JOptionPane.showMessageDialog(null, "Gamoe over...... the murderer got away!");
+            }
+        }
+
     }
 }
