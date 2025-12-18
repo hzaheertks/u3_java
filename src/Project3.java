@@ -11,7 +11,7 @@ public class Project3 {
 
     public static void main(String[] args) {
         JFrame frame =  new JFrame("Murder Mysery!");
-        frame.setSize(700,900);
+        frame.setSize(700,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
          output = new JTextArea();
@@ -25,6 +25,7 @@ public class Project3 {
         output.append("Current time: " + now + "\n");
         output.append("Everyone..... had a reason\n");
         output.append("You have ONE chance only to find the killer...");
+        output.append("\n----------------------------------------------");
 
         JButton interrogate = new JButton("1. Interrogate suspects");
         JButton clue = new JButton("2. View clues");
@@ -84,10 +85,10 @@ public class Project3 {
                     output.append("\nMr. Green says he was in the kitchen at 11 pm\n");
                     break;
                 case "Ms. Scarlett":
-                    output.append("Ms. Scarlett says Mr. Green was NOT in the kitchen\n");
+                    output.append("\nMs. Scarlett says Mr. Green was NOT in the kitchen\n");
                     break;
                 case "Prof. Plum":
-                    output.append("Prof. Plum says he saw Ms. Scarlett in the library\n");
+                    output.append("\nProf. Plum says he saw Ms. Scarlett in the library\n");
                     break;
 
         }
@@ -103,7 +104,7 @@ public class Project3 {
     }
 
     public static void clues() {
-        output.append("Collected clues: \n");
+        output.append("\nCollected clues: \n");
         if (collectedClues.isEmpty()) {
             output.append("No clues collected yet.");
         }
@@ -113,7 +114,7 @@ public class Project3 {
             }
         }
 
-        output.append("The kitchen camera was seen broken at 10:30 PM.\n");
+        output.append("Extra clue observed: the kitchen camera was seen broken at 10:30 PM.\n");
     }
 
     public static void accusations() {
@@ -141,7 +142,7 @@ public class Project3 {
             }
 
             else {
-                JOptionPane.showMessageDialog(null, "Gamoe over...... the murderer got away!");
+                JOptionPane.showMessageDialog(null, "Game over...... the murderer got away!");
             }
         }
 
