@@ -23,7 +23,7 @@ public class Project3 {
         output.append("To detective... YOU!\n");
         output.append("A body was found at 11.42 pm\n");
         output.append("Current time: " + now + "\n");
-        output.append("Everyone had a reason\n");
+        output.append("Everyone..... had a reason\n");
         output.append("You have ONE chance only to find the killer...");
 
         JButton interrogate = new JButton("1. Interrogate suspects");
@@ -83,10 +83,10 @@ public class Project3 {
                     output.append("Mr. Green says he was in the kitchen at 11 pm\n");
                     break;
                 case "Ms. Scarlett":
-                    output.append("Ms. Scalett says Mr. Green was NOT in the kitchen\n");
+                    output.append("Ms. Scarlett says Mr. Green was NOT in the kitchen\n");
                     break;
                 case "Prof. Plum":
-                    output.append("Prof. Plum says he say Ms. Scarlett in the library\n");
+                    output.append("Prof. Plum says he saw Ms. Scarlett in the library\n");
                     break;
 
         }
@@ -99,5 +99,23 @@ public class Project3 {
             }
 
         }
+    }
+
+    public static void clues() {
+        output.append("Collected clues: \n");
+        if (collectedClues.isEmpty()) {
+            output.append("No clues collected yet.");
+        }
+        else {
+            for (int i = 0; i < collectedClues.size(); i++) {
+                output.append("- " + collectedClues.get(i) + "\n");
+            }
+        }
+
+        output.append("The kitchen camera was seen broken at 10:30 PM.\n");
+    }
+
+    public static void accusations() {
+        
     }
 }
